@@ -1,0 +1,60 @@
+#!/bin/bash
+
+# find: 파일 찾기
+# grep: 파일 내의 패턴 검색. 정규 표현식
+# awk : 데이터 처리, 리포트 작성, DB 구축, 약자는 개발자 이름...
+
+
+# 0. test 파일 작성
+
+#ps -ef > ps.txt
+#less ps.txt
+
+
+# 1. 기본 모양
+# awk '{[명령어] or [제어문]}' [파일명]
+
+#awk '{print $8}' ps.txt			# 8번째 필드를 출력 (1 base)
+#awk '{print $1 $8}' ps.txt			# $1 $8 사이에 구분자가 없다.
+#awk '{print $1, $8}' ps.txt		# ,: 기본 구분자(OFS: Field Separator)로 분리해달라.
+#awk '{print NR, $8}' ps.txt		# NR: awk 내장 변수 (라인넘버)
+#awk '{print NR " : " $8}' ps.txt	# 문자열 연결 가능
+#awk '{printf "%05s : %s\n", NR, $8}' ps.txt		# print 대신 printf
+
+
+# 2. 파이프라인 연결
+#date		# Tue June 1 ... 2016
+#date +%F	# 2016-06-01
+
+# 쉘 명령어의 출력 결과를 원하는 형태로 출력
+#date +%F | awk '{print $1"년", $2"월", $3"일"}'		# 기본 구분자는 공백
+#date +%F | awk -F- '{print $1"년", $2"월", $3"일"}'	# -F: 필드 구분자
+														# -F'AA': 2글자 이상일 때
+
+#date +%F | awk -F'[- ]' '{print $1"년", $2"월", $3"일"}'	# -F: 필드 구분자에 정규표현식 사용 가능
+
+#date +%F | awk -F'[- ]' '{printf "%s년 %s월 %s일\n", $1, $2, $3}'
+
+
+# /etc/passwd 파일에는 사용자 계정에 관련된 정도가 있습니다.
+#ID(문자열)와 UID(계정에 대한 숫자) 값 만 출력해 보세요.
+# less /etc/passwd 로 확인 후 해 보세요
+
+#awk -F: '{printf "ID:%s\tUID:%s\n", $1, $3}' /etc/passwd
+
+
+# vsftpd 프로세스를 죽이고 싶습니다. 강제로 죽이려면 프로세스 ID가 필요합니다.
+# vsftpd 프로세스의 ID만 출력하세요.
+
+#ps -ef | egrep 'vsftpd'
+#ps -ef | egrep 'vsftpd' | awk '{print $8, $2}'
+
+
+# 현재 디렉토리에서 'test'라는 단어가 들어간 모든 파일의 이름과 크기만 출력해 보세요
+
+#ls -al | egrep 'test'
+ls -al | egrep 'test' | awk '{print $9 "\t" $5}'
+
+
+
+

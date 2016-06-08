@@ -1,0 +1,4 @@
+gcc: fatal error: no input files
+compilation terminated.
+gcc: fatal error: no input files
+compilation terminated.

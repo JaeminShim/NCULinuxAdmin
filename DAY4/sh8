@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Step 8. case (C언어의 switch)
+
+: '
+echo -n "your name? >> "
+read name
+case "$name" in				# 빈 문자열을 고려해서 "$name" 사용
+	Tom)  echo "Hi Tom";;	# 문장의 끝은 ;;
+	tom)  echo "Hi Tom";;
+	tom*) echo "Hi Tom";;
+	*)    echo "who are you?";;
+esac
+'
+
+
+# 좋은 예제
+read ans
+case "$ans" in
+	[Yy] | [Yy][Ee][Ss] ) echo "Yes";;
+	[Nn] | [Nn][Oo] ) echo "No";;
+	*) echo "??";;
+esac
+
+

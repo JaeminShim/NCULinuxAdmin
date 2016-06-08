@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Step 7. 입력 받기
+
+: '
+echo -n "what is your name?"
+echo -n ": "
+read answer
+echo $answer
+'
+
+: '
+echo -n "Input first middle last: "
+read first middle last
+echo $first
+echo $middle
+echo $last
+'
+
+# REPLY 내장 변수
+#read
+read -p "Job? "		# prompt 사용
+echo $REPLY
+

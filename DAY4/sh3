@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# Step 3. 변수 만들기
+
+# 특징: 타입이 없다. 모두 문자열로 처리
+var1="hello world"
+
+echo var1			# 문자열	var1
+echo $var1			# 변수 값	hello world
+echo "$var1"		# 변수 값	hello world
+echo '$var1'		# 문자열 	$var1
+echo \$var1			# 문자열	$var1
+
+echo "'$var1'"		# 'hello world'
+
+
+#화면에 AAAhello world 출력해 보세요. (hello world는 변수 사용)
+echo AAA$var1
+
+# hello worldAAA
+echo $var1AAA		# 전체를 변수 이름으로 해석 (빈 변수가 생성 됨)
+echo "$var1"AAA
+echo $var1"AAA"
+
+
+# $(())연산 중요합니다.
+echo 2+2
+echo $((2+2))		# 4
+
+
+# num = num+1 만들어 보세요.
+num=1				# 쉘의 변수는 기본적으로 문자열
+
+#num=$num+1			# 문자열	"1+1"
+#num=$(($num + 1))	# 방법 1: $(())을 사용하여 연산
+let num=$num+1		# 방법 2: let 명령
+					# 방법 3: 변수 자체를 정수형 변수로 선언
+echo $num
+
+# 방법 3. 변수 자체를 정수형 변수로 선언 - sh는 안되고 bash만 가능
+declare -i num2=10
+num2=$num2+1
+echo $num2
+
+
+

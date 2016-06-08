@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# while 문
+
+count=1
+#while [ "$count" -le 20 ]
+while (( "$count" < 20 ))
+#while [[ "$count" < 80 ]]	# 이건 뭐지?
+do
+	echo $count
+	#count 1 증가해 보세요
+	#count=$count+1			# 안 됨
+	count=$(($count+1))
+done
+
+

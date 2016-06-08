@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Step 4. 미리 정의된 환경 변수들
+# 모든 환경변수 확인: env
+echo "$LOGNAME's home directory is '$HOME'"
+
+
+# 명령형 전달인자: ./sh4 ARG1 ARG2 ... ARGS
+echo
+echo $0 $1 $2 ${10}	#10 이상은 중괄호로 묶음
+echo $#				# 매개변수 갯수
+echo $*				# 모든 매개변수
+echo $$				# 프로세스 ID
+
+exit 100 			# 쉘 스크립트의 리턴값
+
+

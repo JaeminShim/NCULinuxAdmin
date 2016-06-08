@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# find 명령어 총 정리
+# find: 시스템에서 특정 파일 찾기
+
+# 1. 기본
+#find ~ 		# ~ 디렉토리 파일 열거
+#find ~ | wc -l	# ~ 하위 파일 및 디렉토리 개수
+
+# 2. 옵션 사용하기
+#find ~ -type d | wc -l	# 타입 형식은 교재 214 page 표 17-1 참고
+#find ~ -type f -name "*.c" -size +1M | wc -l #size는 215p 표 17-2
+#find / -type f -name "*.c" -size +1M | wc -l
+
+# 홈 디렉토리에서 최근 3일 이내 수정된 파일만 찾아 보세요
+# 215p 표 17-3 참고
+#find ~ -type f -ctime -3
+
+# 3. 옵션의 논리 연산
+#find ~ -type f \( -size +1k -or -size -2k \)	# 217p
+#find / -type f \( -size +1k -and -size -2k \)	# 217p
+
+# 4. find로 찾은 후 액션 (연산 수행)	- 219p
+#find ~ -type f -name "*.swp"			#vi의 백업 파일 찾기
+#find ~ -type f -name "*.swp" -delete	#미리 정의된 명령 수행
+
+# 5. 사용자 정의 액션 					- 221p
+# 주의사항: 명령 문장의 끝은 \; 또는 ';'
+#find ~ -type d -name "DAY1" -exec ls -l {} \;	# 쉘 명령(ls -l) 수행
+#find ~ -type f -name "*.swp" -exec rm -r {} ';'	# -delete 옵션과 동일
+#find ~ -type f -name "*.swp" -ok rm -r {} ';'		# 수행 전에 확인
+#find ~ -type d -name "DAY*" -ok ls -l {} \;		# 쉘 명령(ls -l) 수행 + 확인
+#find ~ -type d -name "D*" -exec echo {} \;			# echo는 찾은 항목 개수 만큼 실행
+find ~ -type d -name "D*" -exec echo {} \+			# echo는 결과 결합 후 한 번만 실행
+
+
+
+
+
+
+

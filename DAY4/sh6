@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# Step 6. 제어문
+
+# if 문
+
+#name="BBB"
+name=""						# 주의! 빈 문자열 변수 사용 시 빈 문자열로 치환됨에 유의!
+
+# 빈 문자열을 고려하면 $name 보다 "$name" 을 사용하는 것이 좋습니다.
+
+if [ $name = "AAA" ]		# 주의! 띄어쓰기
+then
+	echo "AAA"
+elif [[ $name == "BBB" ]]
+then
+	echo "BBB"
+else
+	echo "OTHER"
+fi							# if의 반대. (case => esac)
+
+
+# if 문 2
+#if [ $name = "AAA" -o $name = "BBB" ]
+if [ $name = "AAA" ] || [ $name = "BBB" ]	# [[ ]] 도 가능
+#if [[ $name = "AAA" || $name = "BBB" ]]
+then
+	echo "AAA" or "BBB"
+else
+	echo "OTHER"
+fi
+
+
+# 파일 조사
+if [ -f "sh1" ]
+then
+	echo "sh1 exists"
+fi
+
+
+
+

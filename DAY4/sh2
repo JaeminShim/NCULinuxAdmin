@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Step 2. 화면 출력
+
+
+# 1. echo
+echo "hello world"
+echo hello world
+
+#echo "hello "       # 자동으로 개행된다
+#echo "hello \c"     # '\c': 개행하지 말라는 확장 문자
+#echo -e "hello \c"  # -e: 확장 문자 사용 옵션
+echo -n "hello "     # -n: 개행하지 말라는 옵션
+echo "world"
+
+
+# 2. printf (쉘 명령)
+printf "hello"       	# 개행 안됨
+printf "world\n"
+
+printf "%f %d\n" 3.4 3	# C와 유사 (구분자가 ,가 아니라 공백임)
+
+# man 1 printf			# 쉘 명령어
+# man 3 printf			# C 함수
+
+
+# echo 확장
+echo A{1,2,3}B
+
+echo cal				# "cal" 문자열 출력
+echo $(cal)				# cal 명령 결과를 출력 *매우 중요*
+

@@ -1,0 +1,10 @@
+total 20
+drwxrwxr-x  2 shim84 shim84 4096 May 17 20:20 .
+drwxr-xr-x 17 shim84 shim84 4096 May 17 20:15 ..
+-rw-rw-r--  1 shim84 shim84    0 May 17 18:40 b.txt
+-rw-rw-r--  2 shim84 shim84   18 May 17 19:48 c_hard.lnk
+lrwxrwxrwx  1 shim84 shim84   10 May 17 19:46 c_hard_soft.lnk -> c_hard.lnk
+lrwxrwxrwx  1 shim84 shim84   15 May 17 19:50 c_hard_soft_soft.lnk -> c_hard_soft.lnk
+-rw-rw-r--  2 shim84 shim84   18 May 17 19:48 c.txt
+-rw-rw-r--  1 shim84 shim84    0 May 17 20:20 dir.txt
+-rw-rw-r--  1 shim84 shim84  182 May 17 19:19 hello.txt
