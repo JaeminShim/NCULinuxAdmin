@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ "$1" != "" ]
+then
+	if [ "$(find -type d -name backup)" == "" ]
+	then
+		mkdir backup
+	fi
+	cp $1 backup/$1.$(date "+%y-%m-%d-%H-%M-%S")
+	vim $1
+else
+	vim
+fi
+
