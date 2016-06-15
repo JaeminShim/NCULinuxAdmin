@@ -1,0 +1,18 @@
+# makefile2 
+
+# 핵심은 최종 목적 파일인 app를 항상 제일 앞에 적어야 한다는 점..
+
+app : main.o foo.o goo.o
+	cc -o app main.o foo.o goo.o
+
+main.o : main.c foo.h goo.h
+	cc -c main.c -I.
+		
+foo.o : foo.c foo.h
+	cc -c foo.c -I.
+
+goo.o : goo.c goo.h
+	cc -c goo.c -I.
+
+
+

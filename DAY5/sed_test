@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# sed_test
+
+# ------------------------------------------
+# (참고) 중요 명령 4개
+# find : 파일 검색
+# grep : 파일 내의 문자열 검색 (정규 표현식)
+# awk  : 화면 출력
+# sed  : 파일 내용 변경
+# ------------------------------------------
+
+# 1. test 파일 준비
+
+#ls ~ -al > sed_data.txt
+
+# 2. 기본 사용법
+# sed 명령 파일이름
+
+# 출력 명령 p
+
+#sed '1,3p' sed_data.txt		# 1~3행 출력 (p: print)
+#sed -n '1,3p' sed_data.txt		# 파일 전체 출력은 하지 말고 명령만 수행
+
+# / / 로 정규 표현식 사용		# awk 등 기타 다른 명령에서도 사용하는 표현
+
+#sed -n '/DAY/p' sed_data.txt
+
+# 삭제 명령 d
+
+#sed '1,10d' sed_data.txt		# (d: delete)
+
+# 치환 명령 s
+
+#sed 's/root/kkk/' sed_data.txt	# 'root'를 'kkk'로 치환 (문장의 첫 번째 필드만 변경)
+sed 's/root/kkk/g' sed_data.txt	# 모든 필드 변경
+
+

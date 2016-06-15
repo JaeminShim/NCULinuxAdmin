@@ -1,0 +1,4 @@
+#!/bin/bash
+
+wget https://www.dropbox.com/s/zfpbkt8z058q81x/MAKE.tar
+tar xf MAKE.tar

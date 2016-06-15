@@ -1,0 +1,20 @@
+# makefile1
+
+# 핵심
+# 1. 최종 목적파일(실행파일)이 반드시 첫 번째 줄에 있어야 한다.
+
+app : main.o foo.o goo.o
+	cc -o app main.o foo.o goo.o
+
+foo.o: foo.c ./include/foo.h
+	cc -c foo.c -I./include
+
+goo.o: goo.c ./include/goo.h
+	cc -c goo.c -I./include
+
+main.o: main.c ./include/foo.h ./include/goo.h
+	cc -c main.c -I./include
+
+# make -f makefile1 으로 빌드
+
+

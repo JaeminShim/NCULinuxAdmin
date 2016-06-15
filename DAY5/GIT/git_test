@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# git client 사용 방법
+
+# 1. git install
+#sudo apt-get install git-core
+
+# 2. 환경 설정
+#git config --global user.name  "NAME"
+#git config --global user.email "user@domain.com"
+#git config --global core.editor vi
+
+# 환경설정 확인
+#git config --list
+
+# 3. 서버로부터 리포지토리 가져오기
+#git clone https://github.com/JaeminShim/test
+
+# 4. 상태 확인하기
+#cd test
+#git status
+

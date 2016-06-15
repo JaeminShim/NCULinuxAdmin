@@ -1,0 +1,19 @@
+# makefile 
+
+# makefile은1번째 타겟만 빌드 합니다.
+
+# 아래처럼 만들면 foo.o만 빌드하게 됩니다.
+
+
+foo.o : foo.c foo.h
+	cc -c foo.c -I.
+
+goo.o : goo.c goo.h
+	cc -c goo.c -I.
+
+main.o : main.c foo.h goo.h
+	cc -c main.c -I.
+
+app : main.o foo.o goo.o
+	cc -o app main.o foo.o goo.o
+	

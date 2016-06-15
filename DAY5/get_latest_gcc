@@ -1,0 +1,3 @@
+#!/bin/bash
+
+wget http://www.netgull.com/gcc/releases/gcc-6.1.0/gcc-6.1.0.tar.bz2
