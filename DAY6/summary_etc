@@ -1,0 +1,19 @@
+gdb
+	disas [엔트리] 			# 어셈블리 확인
+	s
+	n
+	b
+	...
+	q
+
+
+readelf -h					# 실행파일 정보
+objdump -d file				# 어셈블리 출력
+objdump -s -j .data file	# 전역 변수만 보고 싶을 때
+objdump -s -j .rodata file	# 상수만 보고 싶을 때
+
+
+vi
+	[v]  :셀렉션
+	":set mouse+=an"  : 마우스 사용
+	플러그인 사용: ~/.vim/plugin/ 에 플러그인 넣기

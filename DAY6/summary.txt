@@ -1,0 +1,32 @@
+# 핵심 정리
+
+1. 리눅스 설치, ssh, ftp, putty
+2. 프로그램을 설치하는 법
+  1) 설치 프로그램 사용 (Ubuntu: apt-get, Devian: yum)
+	- apt-get install : 패키지 설치
+	- apt-get remove  : 패키지 제거
+	- apt-get update  : apt-get을 업데이트
+  2) 소스 코드를 직접 받아서 빌드 후 사용 (최신버전)
+	A. 다운로드
+ 		a) 웹 브라우저 사용 (web protocol)
+		b) wget 사용 (web protocol)
+			"wget [FILEPATH_URL]"
+		c) git  사용
+			"git clone [REMOTE_REPOSITORY_URL]"
+	B. 압축 풀기 - tar, gzip, bzip2
+		"tar -zxvf [COMPRESSED_FILE]"
+	C. 빌드
+		a) 세팅: sudo ./configure prefix=[설치디렉토리]
+		b) 빌드: sudo make
+		c) 설치: sudo make install
+	D. 환경변수 등록
+		"export PATH=/app/Python:$PATH"
+3. 각종 서버 프로그램의 config 파일 변경
+	1) vsftpd: /etc/vsftpd.conf
+	2) ...
+4. 서버 프로그램의 동작 확인
+	1) ps -ef | grep [PROCESS_NAME]
+	2) service --status-all
+	   service [SERVICE_NAME] [COMMAND: start, stop, restart]
+
+

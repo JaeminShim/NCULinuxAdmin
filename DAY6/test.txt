@@ -1,0 +1,13 @@
+total 52
+drwxrwxr-x  3 shim84 shim84  4096 Jun 21 19:18 .
+drwxr-xr-x 22 shim84 shim84  4096 Jun 21 19:12 ..
+-rwxrwxr-x  1 shim84 shim84   647 Jun 21 17:57 disktest
+-rw-------  1 shim84 shim84 12288 Jun 21 17:48 .disktest.swp
+-rw-rw-r--  1 shim84 shim84    58 Jun 21 18:07 ls_home2_mounted.txt
+-rw-rw-r--  1 shim84 shim84    58 Jun 21 18:08 ls_home2_unmounted.txt
+-rwxrwxr-x  1 shim84 shim84    30 Jun 21 18:20 makepipe
+drwxrwxr-x  3 shim84 shim84  4096 Jun 21 18:36 python-src
+-rwxrwxr-x  1 shim84 shim84   619 Jun 21 19:18 summary2
+-rw-r--r--  1 shim84 shim84  4096 Jun 21 19:18 .summary2.swp
+-rw-rw-r--  1 shim84 shim84  1021 Jun 21 19:04 summary.txt
+-rw-rw-r--  1 shim84 shim84     0 Jun 21 19:18 test.txt

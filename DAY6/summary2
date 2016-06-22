@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# 1. 다양한 서비스 설치 후
+# 2. 기본 명령어들: date, cal, ls, ps
+# 3. 핵심 명령어 4개
+#	find: 파일 검색
+#	grep: 파일 내 패턴 검색
+#	awk: 출력
+#	sed: 파일 변경
+#	정규 표현식
+
+# . [SHELL_SCRIPT] : 함수를 메모리에 상주시킴
+function cgrep()
+{
+	find . -type f \( -name '*.c' -o -name '*.cpp' -o -name '*.cc' -o -name '*.h' -o -name '*.hpp' \) | grep --color -n "$@"
+}
+# 안드로이드 프레임웍에서는 cgrep, javagrep 과 같은 함수 제공
+
+# 4. awk: 출력 뿐 아니라 다양한 명령 수행 가능
+#ls -al > test.txt
+#awk '{print $1}' test.txt
+
+# awk '{명령어}'
+# awk '/ /' 		# 정규 표현식 사용
+# awk '   '			# 비교문 작성
+
+#awk '/test/{print $9}' test.txt	# 정규 표현식 검색 후 2번째 필드 출력
+
+# awk 사용 예제
+awk 'BEGIN{	print "----------------"
+			print "name id date" }
+	 /test/ { max=5; print $9, $3, $6; print max }
+	 END  { print "----------------" }' test.txt
+awk
+
+
+# 사용자 관리 : useradd, userdel, usermod
+# 퍼미션 관리 : chmod, umask(디폴트 퍼미션)
+
+# 컴파일러 사용하기
+# cc:  C 컴파일러
+# g++: C++ 컴파일러
+# makefile 만들고 사용하기
+
+

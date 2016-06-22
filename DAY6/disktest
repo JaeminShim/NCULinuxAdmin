@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# 디스크 작업하기
+# 1. 리눅스 끄고 HDD 추가
+# 2. fdisk -l 으로 디스크 확인
+#    /dev/sda, /dev/sdb 등으로 확인
+# 3. 파티션 나누기: sudo fdisk /dev/sdb
+#    - fdisk 명령: 신규 n, 삭제 d, 출력 p, 저장 w, 종료 q
+# 4. 포맷: sudo mke2fs -j -c -L /home2 /dev/sdb1
+#                      -j : ext3
+#		               -c : 배드블럭 확인
+#		               -L : label 명
+# 5. Mount: sudo mkdir /home2
+#           sudo mount -t ext3 /dev/sdb1 /home2
+# > df-h로 확인
+
+# 시스템 부팅 시 자동 마운트
+# /etc/fstab 편집, 아래 줄 추가
+#   /dev/sdb1  /home2  ext3  defaults  1  2
